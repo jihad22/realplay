@@ -93,7 +93,7 @@ def delete_player(id_user):
     player = Player.query.filter_by(id_user = id_user).first()
 
     if player is None:
-        return jsonify({'message':'Maaf User Tidak Dapat Ditemukan'})
+        return jsonify({'message':'Player Not Found'})
     
     db.session.delete(player)
     db.session.commit()
